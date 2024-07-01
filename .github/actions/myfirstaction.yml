@@ -1,11 +1,10 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push, workflow_dispatch]
+name: My-First-Action
+run-name: ${{ github.actor }} is writing Actions
 jobs:
   check-hello-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Echo a Hello World message
       - run: echo "Hello World"
       - name: Define variables and then echo them
         env:
