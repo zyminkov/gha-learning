@@ -18,4 +18,4 @@ jobs:
           echo "This will be Var 2 - $VARIABLEE_2"
           Echo "It Is Working 1 ${{ env.VAR_2 > env.VAR_1}}"
       - name: Testing an expression
-        run: Echo "It Is Working 2 ${{ env.VAR_2 > env.VAR_1}}"
+        run: echo "It Is Working 2 ${{ env.VAR_2 > env.VAR_1}}"
