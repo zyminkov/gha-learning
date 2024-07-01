@@ -14,3 +14,13 @@ jobs:
         run: 
           echo $VARIABLEE_1
           echo "This will be Var 2 - $VARIABLEE_2"
+      - name: Create some Artifacts
+        shell: bash
+        run: expr 1 + 1 > calc.txt
+      - name: Upload the calc file
+        uses: actions/upload-artifact@v4
+        with:
+          name: calc.txt file
+          path: calc.txt
+
+
