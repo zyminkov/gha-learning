@@ -13,3 +13,4 @@ jobs:
           VARIABLEE_2: This_is_var_2
         run: 
           echo $VARIABLEE_1
+          echo "This will be Var 2 - $VARIABLEE_2"
