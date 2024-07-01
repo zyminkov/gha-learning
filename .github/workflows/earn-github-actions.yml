@@ -11,16 +11,11 @@ jobs:
         env:
           VARIABLEE_1: This_Is_Var_1
           VARIABLEE_2: This_is_var_2
+          VAR_1: 10
+          VAR_2: 20
         run: 
           echo $VARIABLEE_1
           echo "This will be Var 2 - $VARIABLEE_2"
-      - name: Create some Artifacts
-        shell: bash
-        run: expr 1 + 1 > calc.txt
-      - name: Upload the calc file
-        uses: actions/upload-artifact@v4
-        with:
-          name: calc.txt file
-          path: calc.txt
-
-
+          Echo "It Is Working 1 ${{ env.VAR_2 > env.VAR_1}}"
+      - name: Testing an expression
+        run: Echo "It Is Working 2 ${{ env.VAR_2 > env.VAR_1}}"
