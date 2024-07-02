@@ -1,6 +1,11 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push, workflow_dispatch]
+env:
+      VARIABLEE_1: This_Is_Var_1
+      VARIABLEE_2: This_is_var_2
+      VAR_1: 10
+      VAR_2: 20
 jobs:
   check-hello-version:
     runs-on: ubuntu-latest
@@ -8,11 +13,6 @@ jobs:
       - uses: actions/checkout@v4
       - run: echo "Hello World"
       - name: Define variables and then echo them
-        env:
-          VARIABLEE_1: This_Is_Var_1
-          VARIABLEE_2: This_is_var_2
-          VAR_1: 10
-          VAR_2: 20
         run: 
           echo $VARIABLEE_1
           echo "This will be Var 2 - $VARIABLEE_2"
