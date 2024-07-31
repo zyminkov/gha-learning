@@ -18,4 +18,4 @@ jobs:
   #         echo "This will be Var 2 - $VARIABLEE_2"
   #         Echo "It Is Working 1 ${{ env.VAR_2 > env.VAR_1}}"
   reusable:
-    uses: zyminkov/gha-learning/.github/workflows/reusable-workflow.yml@main
+    uses: ./workflows/reusable_workflow.yml@main
