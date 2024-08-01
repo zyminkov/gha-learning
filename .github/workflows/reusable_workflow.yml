@@ -2,6 +2,10 @@ name: Reusable Wprkflow
 
 on:
     workflow_call:
+        inputs:
+            config-o-something:
+              required: true
+              type: string
 
 
 jobs:
@@ -10,3 +14,5 @@ jobs:
         steps:
             - name: Say Hello
               run: echo "Hello Reusable"
+            - name: Print the config-o-something input
+              run: echo ${{ inputs.config-o-something }}

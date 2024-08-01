@@ -19,3 +19,5 @@ jobs:
   #         Echo "It Is Working 1 ${{ env.VAR_2 > env.VAR_1}}"
   reusable:
     uses: ./.github/workflows/reusable_workflow.yml
+    with:
+      config-o-something: config-o-something-send
