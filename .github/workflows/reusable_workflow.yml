@@ -1,4 +1,4 @@
-name: Reusable Wprkflow
+name: Reusable Workflow
 
 on:
     workflow_call:
@@ -6,10 +6,10 @@ on:
             config-o-something:
               required: true
               type: string
-            # target:
-            #     description: 'Deployment matrix'
-            #     required: true
-            #     type: string
+            target:
+                description: 'Deployment matrix'
+                required: true
+                type: string
 
 
 jobs:
@@ -20,5 +20,5 @@ jobs:
               run: echo "Hello Reusable"
             - name: Print the config-o-something input
               run: echo ${{ inputs.config-o-something }}
-            # - name: Matrix
-            #   run: echo ${{ inputs.target }}
+            - name: Matrix
+              run: echo ${{ inputs.target }}
