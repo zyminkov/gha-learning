@@ -25,7 +25,7 @@ jobs:
   reusable-with-matrix:
     strategy:
       matrix:
-        target: [1, 2, 3]
+        target: [boo, doo, goo]
     uses: ./.github/workflows/reusable_workflow.yml
     with:
       target: ${{ matrix.target }}
