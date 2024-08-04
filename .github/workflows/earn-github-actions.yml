@@ -40,7 +40,7 @@ jobs:
     steps:
       - name: Hello my name actions
         id: hello
-        uses: .github/actions/hello-world-docker-action.yml@v1
+        uses: actions/hello-world-docker-action@v1
         with:
             who-to-greet: ${{ github.actor }}
       - name: Get the output time
