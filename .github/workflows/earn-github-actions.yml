@@ -25,3 +25,12 @@ jobs:
     with:
       config-o-something: config-o-something-send
       target: ${{ matrix.target }}
+      
+  matrix-job:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        animal: [cat, dog, bear]
+        color: [black, brown]
+    steps:
+      - run: echo "Hello ${{ matrix.color }} ${{ matrix.animal }}"
