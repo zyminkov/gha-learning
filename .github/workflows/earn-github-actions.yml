@@ -6,6 +6,7 @@ env:
       VARIABLEE_2: This_is_var_2
       VAR_1: 10
       VAR_2: 20
+      NAME: 'My Action'
 jobs:
   # check-hello-version:
   #   runs-on: ubuntu-latest
@@ -45,3 +46,14 @@ jobs:
             who-to-greet: ${{ github.actor }}
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+  output_name:
+    env:
+        JAVA_VERSION: '11'
+    runs-on: ubuntu-latest
+    name: Test variables output
+    steps:
+      - name: Print name
+        run: echo "Hello $NAME. $BUILD. Using Java Version $JAVA_VERSION"
+        env:
+          BUILD: 'We are currently running the Build job'
