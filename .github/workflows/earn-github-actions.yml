@@ -19,6 +19,7 @@ jobs:
   #         echo "This will be Var 2 - $VARIABLEE_2"
   #         Echo "It Is Working 1 ${{ env.VAR_2 > env.VAR_1}}"
   reusable-with-matrix:
+    name: Using reusable workflow with matrx
     strategy:
       matrix:
         target: [boo, doo, goo]
