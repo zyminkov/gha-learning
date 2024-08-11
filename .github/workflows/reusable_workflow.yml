@@ -22,3 +22,13 @@ jobs:
               run: echo ${{ inputs.config-o-something }}
             - name: Matrix
               run: echo ${{ inputs.target }}
+    
+    output-data:
+        name: Generate output
+        runs-on: ubuntu-latest
+        outputs:
+            output1: ${{ steps.step1.outputs.firstword }}
+        steps:
+            - id: step1
+              run: echo "firstword=hello" >> $GITHUB_OUTPUT
+

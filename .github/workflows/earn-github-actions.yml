@@ -18,14 +18,14 @@ jobs:
   #         echo $VARIABLEE_1
   #         echo "This will be Var 2 - $VARIABLEE_2"
   #         Echo "It Is Working 1 ${{ env.VAR_2 > env.VAR_1}}"
-  # reusable-with-matrix:
-  #   strategy:
-  #     matrix:
-  #       target: [boo, doo, goo]
-  #   uses: ./.github/workflows/reusable_workflow.yml
-  #   with:
-  #     config-o-something: config-o-something-send
-  #     target: ${{ matrix.target }}
+  reusable-with-matrix:
+    strategy:
+      matrix:
+        target: [boo, doo, goo]
+    uses: ./.github/workflows/reusable_workflow.yml
+    with:
+      config-o-something: config-o-something-send
+      target: ${{ matrix.target }}
 
   # matrix-job:
   #   runs-on: ubuntu-latest
@@ -35,25 +35,25 @@ jobs:
   #       color: [black, brown]
   #   steps:
   #     - run: echo "Hello ${{ matrix.color }} ${{ matrix.animal }}"
-  docker_action:
-    runs-on: ubuntu-latest
-    name: A job to greet me
-    steps:
-      - name: Hello my name actions
-        id: hello
-        uses: actions/hello-world-docker-action@v1
-        with:
-            who-to-greet: ${{ github.actor }}
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+  # docker_action:
+  #   runs-on: ubuntu-latest
+  #   name: A job to greet me
+  #   steps:
+  #     - name: Hello my name actions
+  #       id: hello
+  #       uses: actions/hello-world-docker-action@v1
+  #       with:
+  #           who-to-greet: ${{ github.actor }}
+  #     - name: Get the output time
+  #       run: echo "The time was ${{ steps.hello.outputs.time }}"
 
-  output_name:
-    env:
-        JAVA_VERSION: '11'
-    runs-on: ubuntu-latest
-    name: Test variables output
-    steps:
-      - name: Print name
-        run: echo "Hello $NAME. $BUILD. Using Java Version $JAVA_VERSION"
-        env:
-          BUILD: 'We are currently running the Build job'
+  # output_name:
+  #   env:
+  #       JAVA_VERSION: '11'
+  #   runs-on: ubuntu-latest
+  #   name: Test variables output
+  #   steps:
+  #     - name: Print name
+  #       run: echo "Hello $NAME. $BUILD. Using Java Version $JAVA_VERSION"
+  #       env:
+  #         BUILD: 'We are currently running the Build job'
